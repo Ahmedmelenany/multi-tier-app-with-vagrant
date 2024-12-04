@@ -4,6 +4,7 @@ sudo dnf install memcached -y
 sudo systemctl enable --now memcached
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/sysconfig/memcached
 sudo systemctl restart memcached
+
 # Configure firewall settings for memcached
 firewall-cmd --add-port=11211/tcp
 firewall-cmd --runtime-to-permanent

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 TOMURL="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.75/bin/apache-tomcat-9.0.75.tar.gz"
 dnf -y install java-11-openjdk java-11-openjdk-devel
 dnf install git maven wget -y
@@ -6,6 +7,7 @@ cd /tmp/
 wget $TOMURL -O tomcatbin.tar.gz
 EXTOUT=`tar xzvf tomcatbin.tar.gz`
 TOMDIR=`echo $EXTOUT | cut -d '/' -f1`
+
 useradd --shell /sbin/nologin tomcat
 rsync -avzh /tmp/$TOMDIR/ /usr/local/tomcat/
 chown -R tomcat.tomcat /usr/local/tomcat
