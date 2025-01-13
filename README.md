@@ -179,7 +179,7 @@ systemctl enable memcached
 systemctl status memcached
 ```
 
-![](./Images/image-4.PNG) 7. In the file **/etc/sysconfig/memcached** we need to replace the loop back address (127.0.0.1) with 0.0.0.0 which allows the traffic from any source:
+7. In the file **/etc/sysconfig/memcached** we need to replace the loop back address (127.0.0.1) with 0.0.0.0 which allows the traffic from any source:
 
 ```
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/sysconfig/memcached
@@ -248,7 +248,7 @@ systemctl enable rabbitmq-server
 systemctl status rabbitmq-server
 ```
 
-![](./Images/image-5.PNG) 9. Configure RabbitMQ to allow connections from remote hosts not just from local machine (loopback):
+9. Configure RabbitMQ to allow connections from remote hosts not just from local machine (loopback):
 
 ```
 sudo sh -c 'echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config'
@@ -391,7 +391,7 @@ cd vprofile-project
 vi src/main/resources/application.properties
 ```
 
-![](./Images/image-6.PNG) 3. Build the artifact from the code (you should be inside the directory vprofile-project):
+![](./Images/image-4.PNG) 3. Build the artifact from the code (you should be inside the directory vprofile-project):
 
 ```
 mvn install
@@ -476,6 +476,6 @@ systemctl restart nginx
 
 1. In the browser write the IP of the nginx server which is http://192.168.32.6/ or anything else that you specified:
 
-![](./Images/image-7.PNG)
+![](./Images/image-5.PNG)
 
 ## Finished Manual provisioning 
